@@ -84,9 +84,9 @@ export default class TextField extends PureComponent {
 
     labelOffset: Label.propTypes.offset,
 
-    labelTextStyle: Text.propTypes.style,
-    titleTextStyle: Text.propTypes.style,
-    affixTextStyle: Text.propTypes.style,
+    labelTextStyle: PropTypes.func,
+    titleTextStyle: PropTypes.func,
+    affixTextStyle: PropTypes.func,
 
     tintColor: PropTypes.string,
     textColor: PropTypes.string,
@@ -223,7 +223,8 @@ export default class TextField extends PureComponent {
 
     let options = {
       toValue: this.focusState(),
-      duration,
+      useNativeDriver: false,
+      duration
     };
 
     startAnimation(focusAnimation, options, this.onFocusAnimationEnd);
