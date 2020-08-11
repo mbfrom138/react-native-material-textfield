@@ -119,6 +119,7 @@ export default class TextField extends PureComponent {
 
     containerStyle: (ViewPropTypes || View.propTypes).style,
     inputContainerStyle: (ViewPropTypes || View.propTypes).style,
+    disableTopLineAnimation: PropTypes.bool,
   };
 
   static inputContainerStyle = styles.inputContainer;
@@ -649,6 +650,8 @@ export default class TextField extends PureComponent {
       errorColor,
       containerStyle,
       inputContainerStyle: inputContainerStyleOverrides,
+      labelWidth,
+      disableTopLineAnimation = false
     } = this.props;
 
     let restricted = this.isRestricted();
@@ -701,6 +704,8 @@ export default class TextField extends PureComponent {
 
       lineType,
       disabledLineType,
+      labelWidth,
+      disableTopLineAnimation
     };
 
     return (

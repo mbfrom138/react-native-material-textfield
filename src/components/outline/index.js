@@ -79,7 +79,7 @@ export default class Line extends PureComponent {
   }
 
   render() {
-    let { lineType, labelWidth, labelAnimation, contentInset } = this.props;
+    let { lineType, labelWidth, labelAnimation, contentInset, disableTopLineAnimation = false } = this.props;
 
     if ('none' === lineType) {
       return null;
@@ -88,7 +88,7 @@ export default class Line extends PureComponent {
     let labelOffset = 2 * (contentInset.left - 2 * borderRadius);
     let lineOffset = Animated.add(labelWidth, labelOffset);
 
-    let topLineContainerStyle = {
+    let topLineContainerStyle = disableTopLineAnimation ? {} : {
       transform: [{
         scaleX: I18nManager.isRTL? -1 : 1,
       }, {
