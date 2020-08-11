@@ -68,6 +68,10 @@ export default class Label extends PureComponent {
     if (null == label) {
       return null;
     }
+    
+    // Allow labelTextStyle color to override baseColor
+    const { color } = style;
+    baseColor = color ? color : baseColor;
 
     let color = disabled?
       baseColor:
