@@ -84,9 +84,9 @@ export default class TextField extends PureComponent {
 
     labelOffset: Label.propTypes.offset,
 
-    labelTextStyle: PropTypes.func,
-    titleTextStyle: PropTypes.func,
-    affixTextStyle: PropTypes.func,
+    labelTextStyle: PropTypes.object,
+    titleTextStyle: PropTypes.object,
+    affixTextStyle: PropTypes.object,
 
     tintColor: PropTypes.string,
     textColor: PropTypes.string,
