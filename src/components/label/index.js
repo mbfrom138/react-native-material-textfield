@@ -43,7 +43,7 @@ export default class Label extends PureComponent {
       y1: PropTypes.number,
     }),
 
-    style: PropTypes.func,
+    style: PropTypes.object,
     label: PropTypes.string,
   };
 
@@ -68,9 +68,9 @@ export default class Label extends PureComponent {
     if (null == label) {
       return null;
     }
-    
+
     // Allow labelTextStyle color to override baseColor
-    const { color: colorOverride } = style;
+    const { color: colorOverride } = style || {};
     baseColor = colorOverride ? colorOverride : baseColor;
 
     let color = disabled?
